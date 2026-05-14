@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
-class BlockController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+          $datas = Blog::get();
+        return view('blogtable', compact('datas'));
     }
 
     /**
@@ -19,7 +21,7 @@ class BlockController extends Controller
      */
     public function create()
     {
-        //
+        return view('blogform');
     }
 
     /**
@@ -27,7 +29,9 @@ class BlockController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Blog::create($request->all());
+        return redirect()->route('blogpage');
+
     }
 
     /**
@@ -35,7 +39,8 @@ class BlockController extends Controller
      */
     public function show(string $id)
     {
-        //
+         $data=Blog::find($id);
+         return view('blogshow', compact('data'));
     }
 
     /**
@@ -43,7 +48,8 @@ class BlockController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Blog::find($id);
+        return view('blogedit', compact('data'));
     }
 
     /**
@@ -51,7 +57,10 @@ class BlockController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $blog = Blog::find($id);
+       
+        $blog->update($request->all());
+        return redirect()->route('blogpage');
     }
 
     /**
@@ -59,6 +68,8 @@ class BlockController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $blog = Blog::find($id);
+        $blog->delete();
+        return redirect()->route('blogpage');
     }
 }
