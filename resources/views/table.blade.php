@@ -35,6 +35,7 @@
                         <th>Edit</th>
                         
                         <th>Show</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
 
@@ -57,9 +58,13 @@
     <!-- Edit Button -->
     <td><a href="{{ route('editpage', $data->id) }}" ><button>Edit</button></a></td>
     <td><a href="{{ route('displaypage', $data->id) }}" ><button>Show</button></a></td>
-    
-
-    
+    <td>
+    <form action="{{ route('delete', $data->id) }}" method="POST">
+        @csrf
+        
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+    </td>
 </tr>
 
 @endforeach

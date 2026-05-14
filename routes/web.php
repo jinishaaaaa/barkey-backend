@@ -24,12 +24,17 @@ Route::get('/', function () {
 //     return "Record with ID $id deleted successfully!";
 // })->name('deletepage');
 
-Route::get('/table', [DemoController::class, 'index'])->name('tablepage');
+Route::get('table/table', [DemoController::class, 'index'])->name('tablepage');
 
-Route::get('/bakeryform', [DemoController::class, 'create'])->name('bakeryformpage');
+Route::get('form/bakeryform', [DemoController::class, 'create'])->name('bakeryformpage');
 
 Route::post('/bakeryform', [DemoController::class,'store'])->name('bakerybutton');
 
-Route::get('/displayinfo/{id}',[DemoController::class,'show'])->name('displaypage');
+Route::get(' table/displayinfo/{id}',[DemoController::class,'show'])->name('displaypage');
 
-Route::get('/edit/{id}',[DemoController::class,'edit'])->name('editpage');
+Route::get('table/edit/{id}',[DemoController::class,'edit'])->name('editpage');
+
+Route::post(' table/update/{id}',[DemoController::class, 'update'])->name('update');
+
+Route::post(' table/delete/{id}',[DemoController::class, 'destroy'])->name('delete');
+

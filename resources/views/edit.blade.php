@@ -37,7 +37,7 @@
                     </div>
 
                     <!-- Form -->
-                    <form action="{{ route('bakerybutton') }}" method="POST">
+                    <form action="{{ route('update', $data->id) }}" method="POST">
 
                         @csrf
 

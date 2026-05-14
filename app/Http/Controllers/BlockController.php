@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Form;
-use App\Models\Table;
 use Illuminate\Http\Request;
 
-class DemoController extends Controller
+class BlockController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $datas = Form::get();
-        return view('table', compact('datas'));
+        //
     }
 
     /**
@@ -22,7 +19,7 @@ class DemoController extends Controller
      */
     public function create()
     {
-        return view('bakeryform');
+        //
     }
 
     /**
@@ -30,10 +27,7 @@ class DemoController extends Controller
      */
     public function store(Request $request)
     {
-        
-        Form::create($request->all());
-        return redirect()->route('tablepage');
-
+        //
     }
 
     /**
@@ -41,8 +35,7 @@ class DemoController extends Controller
      */
     public function show(string $id)
     {
-         $data = Form::find($id);
-         return view('Show', compact('data'));
+        //
     }
 
     /**
@@ -50,8 +43,7 @@ class DemoController extends Controller
      */
     public function edit(string $id)
     {
-       $data = Form::find($id);
-       return view('edit', compact('data'));
+        //
     }
 
     /**
@@ -59,13 +51,7 @@ class DemoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $form = Form::find($id);
-        // $form->update([
-        //     'fullname'=>$request->fullname
-            
-        // ]);
-        $form->update($request->all());
-        return redirect()->route('tablepage');
+        //
     }
 
     /**
@@ -73,8 +59,6 @@ class DemoController extends Controller
      */
     public function destroy(string $id)
     {
-        $form = Form::find($id);
-        $form->delete();
-        return redirect()->route('tablepage');
+        //
     }
 }
