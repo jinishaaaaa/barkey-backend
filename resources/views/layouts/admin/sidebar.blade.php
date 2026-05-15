@@ -20,7 +20,8 @@
                 Tables
             </a>
 
-            <a href="#">
+            
+           <a href="{{ route('blogtable') }}">
                 <i class="bi bi-file-earmark-text"></i>
                 Blogs
             </a>
@@ -35,8 +36,5 @@
                 Logout
             </a>
 
-            <a href="#">
-                <i class="bi bi-blogs"></i>
-                Blogs
-            </a>
+           
         </div>
