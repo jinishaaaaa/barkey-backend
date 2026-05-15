@@ -52,6 +52,16 @@ Route::post('/blog/update/{id}',[BlogController::class, 'update'])->name('blogup
 
 Route::post('/blog/delete/{id}',[BlogController::class, 'destroy'])->name('blogdelete');
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+});
+
+
 
 
 
