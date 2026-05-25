@@ -3,6 +3,9 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -63,6 +66,11 @@ Route::get('/admin', function () {
     return view('admin.dashboard');
 });
 
+Route::resource('product', ProductController::class );
+
+Route::resource('review', ReviewController::class);
+
+Route::resource('gallery', GalleryController::class);
 
 
 

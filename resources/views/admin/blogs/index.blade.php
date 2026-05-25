@@ -11,6 +11,7 @@
                         <th>Author</th>
                         <th>Date</th>
                         <th>Message</th>
+                        <th>Image</th>
                         <th>Create</th>
                         <th>Edit</th>
                         
@@ -35,6 +36,7 @@
     <td>{{ $data->author }}</td>
     <td>{{ $data->date }}</td>
     <td>{{ $data->message }}</td>
+    <td><img src="{{ asset('storage/' . $data->image) }}" alt="Image" style="max-width: 100px; max-height: 100px;"></td>
     <td><a href="{{ route('blogformpage') }}" ><button>Create</button></a></td>
     <!-- Edit Button -->
     <td><a href="{{ route('blogeditpage', $data->id) }}" ><button>Edit</button></a></td>

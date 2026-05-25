@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Information</title>
+  <title>Review Information</title>
 
   <style>
 
@@ -54,30 +54,30 @@
 
   <div class="info-box">
 
-    <h1>Product Information</h1>
+    <h1>Review Information</h1>
 
     <!-- Title -->
     <div class="info">
       <span>Name:</span>
-      {{ $product->name }}
+      {{ $review->name }}
     </div>
 
     <!-- Description -->
     <div class="info">
       <span>Description:</span>
-      {{ $product->description }}
+      {{ $review->description }}
     </div>
 
     <!-- Price -->
     <div class="info">
       <span>Price:</span>
-      {{ $product->price }}
+      {{ $review->price }}
     </div>
 
     <!-- Category -->
     <div class="info">
       <span>Category:</span>
-      {{ $product->category }}
+      {{ $review->category }}
     </div>
 
 

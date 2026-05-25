@@ -40,41 +40,29 @@
                     </div>
 
                     <!-- Form -->
-                    <form action="{{ route('productupdate', $data->id) }}" method="POST">
+                    <form action="{{ route('product.update', $product->id) }}" method="POST">
 
                         @csrf
+                        @method('PUT')
 
                         <!-- Title -->
                         <div class="mb-3">
 
-                            <label class="form-label">Title</label>
+                            <label class="form-label">Name</label>
 
                             <input type="text"
-                                   name="title"
+                                   name="name"
                                    class="form-control"
-                                   placeholder="Enter title"
-                                   value="{{ $data->title }}">
+                                   placeholder="Enter name"
+                                   value="{{ $product->name }}">
 
-                            @error('title')
+                            @error('name')
                                 <span style="color:red">{{ $message }}</span>
                             @enderror
 
                         </div>
 
-                        <!-- Subtitle -->
-                        <div class="mb-3">
-
-                            <label class="form-label">Subtitle</label>
-
-                            <input type="text"
-                                   name="subtitle"
-                                   class="form-control"
-                                   placeholder="Enter subtitle"
-                                   value="{{ $data->subtitle }}">
-
-                            @error('subtitle')
-                                <span style="color:red">{{ $message }}</span>
-                            @enderror
+                        
 
                         </div>
 
@@ -86,7 +74,7 @@
                             <textarea name="description"
                                       rows="5"
                                       class="form-control"
-                                      placeholder="Write description">{{ $data->description }}</textarea>
+                                      placeholder="Write description">{{ $product->description }}</textarea>
 
                             @error('description')
                                 <span style="color:red">{{ $message }}</span>
@@ -94,18 +82,18 @@
 
                         </div>
 
-                        <!-- Author -->
+                        <!-- Price -->
                         <div class="mb-3">
 
-                            <label class="form-label">Author</label>
+                            <label class="form-label">Price</label>
 
                             <input type="text"
-                                   name="author"
+                                   name="price"
                                    class="form-control"
-                                   placeholder="Enter author name"
-                                   value="{{ $data->author }}">
+                                   placeholder="Enter price"
+                                   value="{{ $product->price }}">
 
-                            @error('author')
+                            @error('price')
                                 <span style="color:red">{{ $message }}</span>
                             @enderror
 
@@ -114,30 +102,19 @@
                         <!-- Date -->
                         <div class="mb-3">
 
-                            <label class="form-label">Date</label>
+                            <label class="form-label">Category</label>
 
-                            <input type="date"
-                                   name="date"
+                            <input type="text"
+                                   name="category"
                                    class="form-control"
-                                   value="{{ $data->date }}">
+                                   value="{{ $product->category }}">
 
-                            @error('date')
+                            @error('category')
                                 <span style="color:red">{{ $message }}</span>
                             @enderror
 
                         </div>
 
-                         <div class="mb-3">
-                            <label class="form-label">Message</label>
-
-                            <textarea name="message"
-                                      rows="4"
-                                      class="form-control"
-                                      placeholder="Write your message">{{ $data->message }}</textarea>
-                            @error('message')
-                                <span style="color:red">{{ $message }}</span>
-                            @enderror
-                        </div>
 
 
 

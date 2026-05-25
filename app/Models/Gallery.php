@@ -4,15 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class Gallery extends Model
 {
     protected $fillable = [
         'title',
-        'subtitle',
-        'description',
-        'author',
-        'date',
-        'message',
         'image',
+        'description',
     ];
 }

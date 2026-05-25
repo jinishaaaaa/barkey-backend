@@ -41,7 +41,7 @@
                     </div>
 
                     <!-- Form -->
-                    <form action="{{ route('blogbutton') }}" method="POST">
+                    <form action="{{ route('blogbutton') }}" method="POST" enctype="multipart/form-data">
 
                         @csrf
 
@@ -132,6 +132,17 @@
                                       class="form-control"
                                       placeholder="Write your message"></textarea>
                             @error('message')
+                                <span style="color:red">{{ $message }}</span>
+                            @enderror
+                        </div>
+                         <!-- #image -->
+
+                         <div class="mb-3">
+                            <label class="form-label">Image</label>
+                            <input type="file" name="image" class="form-control bprder" accept="image/*">
+
+                            
+                            @error('image')
                                 <span style="color:red">{{ $message }}</span>
                             @enderror
                         </div>

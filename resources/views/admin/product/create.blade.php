@@ -41,7 +41,7 @@
                     </div>
 
                     <!-- Form -->
-                    <form action="{{ route('productbutton') }}" method="POST">
+                    <form action="{{ route('product.store') }}" method="POST">
 
                         @csrf
 
@@ -51,11 +51,11 @@
                             <label class="form-label">Name</label>
 
                             <input type="text"
-                                   name="title"
+                                   name="name"
                                    class="form-control"
                                    placeholder="Enter blog title">
 
-                            @error('title')
+                            @error('name')
                                 <span style="color:red">{{ $message }}</span>
                             @enderror
 
@@ -86,11 +86,11 @@
                             <label class="form-label">Price</label>
 
                             <input type="text"
-                                   name="author"
+                                   name="price"
                                    class="form-control"
                                    placeholder="Enter price">
 
-                            @error('author')
+                            @error('price')
                                 <span style="color:red">{{ $message }}</span>
                             @enderror
 
@@ -101,34 +101,24 @@
 
                             <label class="form-label">Category</label>
 
-                            <input type="date"
-                                   name="date"
-                                   class="form-control">
+                            <input type="text"
+                                   name="category"
+                                   class="form-control"
+                                   placeholder="Enter category">
 
-                            @error('date')
+                            @error('category')
                                 <span style="color:red">{{ $message }}</span>
                             @enderror
 
                         </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">Message</label>
-
-                            <textarea name="message"
-                                      rows="4"
-                                      class="form-control"
-                                      placeholder="Write your message"></textarea>
-                            @error('message')
-                                <span style="color:red">{{ $message }}</span>
-                            @enderror
-                        </div>
 
                         <!-- Button -->
                         <div class="d-grid">
 
                             <button type="submit"
                                     class="btn btn-primary fw-bold">
-                                Submit Blog
+                                Submit Product
                             </button>
 
                         </div>

@@ -5,13 +5,11 @@
 
                 <thead class="table-primary">
                     <tr>
-                        <th>Name</th>
+                        <th>Title</th>
+                        <th>Image</th>
                         <th>Description</th>
-                        <th>Price</th>
-                        <th>Category</th>
                         <th>Create</th>
                         <th>Edit</th>
-                        
                         <th>Show</th>
                         <th>Delete</th>
                         
@@ -27,18 +25,17 @@
 
 <tr>
 
-    <td>{{ $data->name }}</td>
+    <td>{{ $data->title }}</td>
+    <td><img src="{{ asset('storage/' . $data->image) }}" alt="Image" style="max-width: 100px; max-height: 100px;"></td>
     <td>{{ $data->description }}</td>
-    <td>{{ $data->price }}</td>
-    <td>{{ $data->category }}</td>
-    <td><a href="{{ route('product.create') }}" ><button>Create</button></a></td>
+    <td><a href="{{ route('gallery.create') }}" ><button>Create</button></a></td>
     <!-- Edit Button -->
-    <td><a href="{{ route('product.edit', $data->id) }}" ><button>Edit</button></a></td>
-    <td><a href="{{ route('product.show', $data->id) }}" ><button>Show</button></a></td>
+    <td><a href="{{ route('gallery.edit', $data->id) }}" ><button>Edit</button></a></td>
+    <td><a href="{{ route('gallery.show', $data->id) }}" ><button>Show</button></a></td>
     <td>
-    <form action="{{ route('product.destroy', $data->id) }}" method="POST">
+    <form action="{{ route('gallery.destroy', $data->id) }}" method="POST">
         @csrf
-        @method('DELETE')
+        
         <button type="submit" class="btn btn-danger">Delete</button>
     </form>
     </td>

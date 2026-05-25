@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Information</title>
+  <title>Blog Information</title>
 
   <style>
 
@@ -54,32 +54,27 @@
 
   <div class="info-box">
 
-    <h1>Product Information</h1>
+    <h1>Blog Information</h1>
 
     <!-- Title -->
     <div class="info">
-      <span>Name:</span>
-      {{ $product->name }}
+      <span>Title:</span>
+      {{ $data->title }}
+    </div>
+
+    <!-- Subtitle -->
+    <div class="info">
+      <span>Image:</span>
+      <img src="{{ asset('storage/' . $data->image) }}" alt="Image" style="max-width: 100px; max-height: 100px;">
     </div>
 
     <!-- Description -->
     <div class="info">
       <span>Description:</span>
-      {{ $product->description }}
+      {{ $data->description }}
     </div>
 
-    <!-- Price -->
-    <div class="info">
-      <span>Price:</span>
-      {{ $product->price }}
-    </div>
-
-    <!-- Category -->
-    <div class="info">
-      <span>Category:</span>
-      {{ $product->category }}
-    </div>
-
+   
 
   </div>
 
