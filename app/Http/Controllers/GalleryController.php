@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
@@ -58,7 +59,24 @@ class GalleryController extends Controller
      */
     public function update(Request $request, Gallery $gallery)
     {
-        $gallery->update($request->all());
+        $data = ($request->all());
+
+        if($request->hasfile('image')){
+
+            // Delete the old image if it exists
+
+           if ($gallery->image) {
+                Storage::disk('public')->delete($gallery->image);
+            }
+
+            // Upload new image
+
+            $path = $request->file('image')->store('images', 'public');
+            $data['image'] = $path;
+        }
+
+        $gallery->update($data);
+
         return redirect()->route('gallery.index');
     }
 

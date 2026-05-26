@@ -32,12 +32,12 @@
                     </div>
 
                     <!-- Form Start -->
-                    <form action="{{ route('image.update', $data->id) }}"
+                    <form action="{{ route('gallery.update', $gallery->id) }}"
                           method="POST"
                           enctype="multipart/form-data">
 
                         @csrf
-
+                        @method('PUT')
                         <!-- Title -->
                         <div class="mb-3">
 
@@ -49,7 +49,7 @@
                                    name="title"
                                    class="form-control"
                                    placeholder="Enter image title"
-                                   value="{{ $data->title }}">
+                                   value="{{ $gallery->title }}">
 
                             @error('title')
                                 <span style="color:red">
@@ -62,7 +62,7 @@
                         <!-- Old Image -->
                         <div class="mb-3 text-center">
 
-                            <img src="{{ asset($data->image) }}"
+                            <img src="{{ asset($gallery->image) }}"
                                  width="150"
                                  class="rounded shadow">
 
@@ -97,7 +97,7 @@
                             <textarea name="description"
                                       rows="4"
                                       class="form-control"
-                                      placeholder="Write description">{{ $data->description }}</textarea>
+                                      placeholder="Write description">{{ $gallery->description }}</textarea>
 
                             @error('description')
                                 <span style="color:red">
