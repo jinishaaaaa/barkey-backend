@@ -36,5 +36,20 @@
                 Logout
             </a>
 
+            <a href="{{ route('review.index') }}">
+                <i class="bi bi-box-arrow-right"></i>
+                review
+            </a>
+
+            <a href="{{ route('product.index') }}">
+                <i class="bi bi-box-arrow-right"></i>
+                Products
+            </a>
+
+            <a href="{{ route('gallery.index') }}">
+                <i class="bi bi-box-arrow-right"></i>
+                Gallery
+            </a>
+
            
         </div>

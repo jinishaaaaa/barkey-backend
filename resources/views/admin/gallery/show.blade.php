@@ -59,19 +59,19 @@
     <!-- Title -->
     <div class="info">
       <span>Title:</span>
-      {{ $data->title }}
+      {{ $gallery->title }}
     </div>
 
     <!-- Subtitle -->
     <div class="info">
       <span>Image:</span>
-      <img src="{{ asset('storage/' . $data->image) }}" alt="Image" style="max-width: 100px; max-height: 100px;">
+      <img src="{{ asset('storage/' . $gallery->image) }}" alt="Image" style="max-width: 100px; max-height: 100px;">
     </div>
 
     <!-- Description -->
     <div class="info">
       <span>Description:</span>
-      {{ $data->description }}
+      {{ $gallery->description }}
     </div>
 
    

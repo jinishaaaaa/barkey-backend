@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\BakeryhomeController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BlogpageController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
@@ -74,4 +77,11 @@ Route::resource('gallery', GalleryController::class);
 
 
 
+Route::get('/galleries', [MenuController::class, 'gallery'])->name('menupage');
 
+
+
+
+Route::get('/bakeryhome', [BakeryhomeController::class, 'table']);
+
+Route::get('/blogpage', [BlogpageController::class, 'table']);

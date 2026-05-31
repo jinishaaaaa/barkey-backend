@@ -35,6 +35,7 @@
     <td>
     <form action="{{ route('gallery.destroy', $data->id) }}" method="POST">
         @csrf
+        @method('DELETE')
         
         <button type="submit" class="btn btn-danger">Delete</button>
     </form>

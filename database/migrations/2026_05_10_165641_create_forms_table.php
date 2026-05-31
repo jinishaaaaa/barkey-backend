@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('emailaddress');
             $table->string('coursesection');
             $table->string('durationsection');
-            $table->text('message');
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }
